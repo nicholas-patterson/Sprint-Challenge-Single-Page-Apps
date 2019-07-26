@@ -14,8 +14,6 @@ export default function CharacterList() {
       .then(res => setCharacters(res.data.results));
   }, []);
 
-  console.log(characters);
-
   return (
     <section className="character-list grid-view">
       {characters.map((character, index) => {

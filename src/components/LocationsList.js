@@ -11,7 +11,6 @@ export default function LocationsList() {
       .then(res => setLocation(res.data.results));
   }, []);
 
-  console.log(location);
   return (
     <div>
       {location.map((places, index) => {

@@ -7,9 +7,14 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 150,
+    minWidth: 300,
     marginBottom: 20,
     boxSizing: "border-box"
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)"
   },
   title: {
     fontSize: 18
@@ -19,26 +24,19 @@ const useStyles = makeStyles({
   }
 });
 
-export default function LocationCard({ places }) {
+const EpisodeCard = ({ episode }) => {
   const classes = useStyles();
-  const residents = places.residents.map(resident => {
-    return <p>{resident}</p>;
-  });
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} gutterBottom>
-          Location: {places.name}
+          {episode.name}
         </Typography>
-        <Typography>Dimension: {places.dimension}</Typography>
-        <Typography>Residents: {residents.length}</Typography>
+        <Typography>Season: {episode.episode}</Typography>
+        <Typography>Air Date: {episode.air_date}</Typography>
       </CardContent>
     </Card>
-
-    // <div>
-    //   <h3>{places.name}</h3>
-    //   <p>{places.dimension}</p>
-    //   <p>Residents: {residents.length}</p>
-    // </div>
   );
-}
+};
+
+export default EpisodeCard;

@@ -36,12 +36,6 @@ const EpisodeCard = ({ episode }) => {
         <Typography>Air Date: {episode.air_date}</Typography>
       </CardContent>
     </Card>
-
-    // <div>
-    //   <h3>Episode Name: {episode.name}</h3>
-    //   <p>Season: {episode.episode}</p>
-    //   <p>Air Date: {episode.air_date}</p>
-    // </div>
   );
 };
 

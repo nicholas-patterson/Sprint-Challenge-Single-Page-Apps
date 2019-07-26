@@ -19,6 +19,8 @@ export default function SearchForm({ onSearch }) {
     e.preventDefault();
   };
 
+  console.log(onSearch);
+
   return (
     <section className="search-form">
       {/* <form onSubmit={() => onSearch(query)}> */}

@@ -11,13 +11,18 @@ export default function SearchForm({ onSearch }) {
 
   useEffect(() => {
     axios
-      .get(`https://rickandmortyapi.com/api/character/?name=${query}`)
-      .then(res => console.log(res));
+      .get(`https://rickandmortyapi.com/api/character/?name=${query.name}`)
+      .then(res => console.log(res.data));
   }, [query]);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
 
   return (
     <section className="search-form">
-      <form onSubmit={() => onSearch(query)}>
+      {/* <form onSubmit={() => onSearch(query)}> */}
+      <form onSubmit={() => handleSubmit}>
         <input
           onChange={handleInputChange}
           placeholder="name"
